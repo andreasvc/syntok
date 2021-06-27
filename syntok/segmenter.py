@@ -5,7 +5,7 @@ import regex
 from syntok._segmentation_states import Begin, State
 from syntok.tokenizer import Token, Tokenizer
 
-__PARAGRAPH_SEP = regex.compile("\r?\n(?:\\s*\r?\n)+")
+__PARAGRAPH_SEP = regex.compile("\r?\n(?=\\s*\r?\n)+")
 
 
 def analyze(document: str, bracket_skip_len=None) -> Iterator[Iterator[List[Token]]]:
